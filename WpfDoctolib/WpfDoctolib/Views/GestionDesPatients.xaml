@@ -1,0 +1,61 @@
+﻿<Window x:Class="WpfDoctolib.Views.GestionDesPatients"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDoctolib.ViewModels"
+        mc:Ignorable="d"
+        Title="GestionDesPatients" Height="300" Width="450">
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/background_window.jpg"/>
+        </Grid.Background>
+        <GroupBox Header="Gestion des Patients">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Margin="0 5 0 5">
+                        <Label Content="Code :   "></Label>
+                        <TextBox Margin="0,0,0,0" Width="100" Text="{Binding CodePatient}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5 0 5">
+                        <Label Content="Nom :    "></Label>
+                        <TextBox  Margin="0,0,0,0" Width="100" Text="{Binding NomPatient}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5 0 5">
+                        <Label Content="Adresse "></Label>
+                        <TextBox  Margin="0,0,0,0" Width="150" Height="50" Text="{Binding AdressePatient}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5 0 5">
+                        <Label Content="Date de naissance : "></Label>
+                        <DatePicker  x:Name ="DateNaissancePatient" Margin="0 5 0 5" SelectedDate="{Binding NaissancePatient, StringFormat='dd/MM/yyyy'}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5 0 5">
+                        <Label Content="Sexe : "></Label>
+                        <ComboBox Height="23" Name="comboBox1" Text="{Binding SexePatient}" Width="120">
+                            <ComboBoxItem Content="Masculin"/>
+                            <ComboBoxItem Content="Feminin"/>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <StackPanel>
+                        <Button Width="80" Margin="0 5 0 5" Command="{Binding NouveauForm}">Nouveau</Button>
+                    </StackPanel>
+                    <StackPanel>
+                        <Button Width="80" Margin="0 5 0 5" Command="{Binding AjouterPatient}">Ajouter</Button>
+                    </StackPanel>
+                    <StackPanel>
+                        <Button Width="80" Margin="0 5 0 5" Command="{Binding ModifierPatient}">Modifier</Button>
+                    </StackPanel>
+                    <StackPanel>
+                        <Button Width="80" Margin="0 5 0 5" Command="{Binding SupprimerPatient}">Supprimer</Button>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

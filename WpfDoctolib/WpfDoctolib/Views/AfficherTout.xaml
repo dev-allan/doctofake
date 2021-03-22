@@ -1,0 +1,58 @@
+﻿<Window x:Class="WpfDoctolib.Views.AfficherTout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDoctolib.ViewModels"
+        mc:Ignorable="d"
+        Title="AfficherTout" Height="450" Width="600">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/background_window.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <ListView x:Name="ListeBoxMedecins" ItemsSource="{Binding Medecins}" SelectedItem="{Binding Medecin}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="100" Header="Code Medecin" DisplayMemberBinding="{Binding CodeMedecin}"/>
+                        <GridViewColumn Width="100" Header="Nom Medecin" DisplayMemberBinding="{Binding NomMedecin}"/>
+                        <GridViewColumn Width="100" Header="Tel Medecin" DisplayMemberBinding="{Binding TellMedecin}"/>
+                        <GridViewColumn Width="160" Header="Date Inscription" DisplayMemberBinding="{Binding DateInscription}"/>
+                        <GridViewColumn Width="140" Header="Specialité" DisplayMemberBinding="{Binding SpecialiteMedecin}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <ListView x:Name="ListeBoxPatient" ItemsSource="{Binding Patients}" SelectedItem="{Binding Patient}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="100" Header="Code Patient" DisplayMemberBinding="{Binding CodePatient}"/>
+                        <GridViewColumn Width="100" Header="Nom Patient" DisplayMemberBinding="{Binding NomPatient}"/>
+                        <GridViewColumn Width="100" Header="Adresse Patient" DisplayMemberBinding="{Binding AdressePatient}"/>
+                        <GridViewColumn Width="160" Header="Date Naissance" DisplayMemberBinding="{Binding DateNaissance}"/>
+                        <GridViewColumn Width="140" Header="Sexe Patient" DisplayMemberBinding="{Binding SexePatient}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <ListView x:Name="ListeBoxRDV" ItemsSource="{Binding RDVs}" SelectedItem="{Binding RendezVous}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="100" Header="Numero RDV" DisplayMemberBinding="{Binding NumeroRdv}"/>
+                        <GridViewColumn Width="100" Header="Date RDV" DisplayMemberBinding="{Binding DateRDV}"/>
+                        <GridViewColumn Width="100" Header="Heure RDV" DisplayMemberBinding="{Binding HeureRDV}"/>
+                        <GridViewColumn Width="160" Header="Code Medecin" DisplayMemberBinding="{Binding CodeMedecin}"/>
+                        <GridViewColumn Width="140" Header="Code Patient" DisplayMemberBinding="{Binding CodePatient}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>

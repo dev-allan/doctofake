@@ -69,7 +69,7 @@ namespace WpfDoctolib.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfDoctolib;component/views/gestiondespatients.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfDoctofake;component/views/gestiondespatients.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\GestionDesPatients.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
